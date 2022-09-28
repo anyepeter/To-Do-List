@@ -1,72 +1,52 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Todo List project
 
-> Description the project.
+> In this project, an individual can set a list of things to do achive by the end of a day.
 
 
-## Built With
+## The project is built using
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- HTML
+- CSS
+- JavaScript 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-### Setup
+- A working browser application (Google chrome, Mozilla Fire fox, Microsoft edge ...)
+- VSCode or any other equivalent code editor :atom:
+- Node Package Manager (For running, debuging, or installing dependancies to be used)
 
 ### Install
-
+git clone [https://github.com/anyepeter/To-Do-List.git](https://github.com/anyepeter/To-Do-List.git)
 ### Usage
 
 ### Run tests
+- npx eslint.
+- npx webhint .
+- npx stylelint "**/*.{css,scss}"
 
-### Deployment
+👤 **ANYE PETER**
+
+- GitHub: [@anyepeter](https://github.com/anyepeter)
+- Twitter: [@anyepeter](https://twitter.com/home?lang=en)
+- LinkedIn: [peterchendi](https://www.linkedin.com/feed/)
 
 
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/anyepeter/Awesome-books-with-ES6/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
