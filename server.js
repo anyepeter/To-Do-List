@@ -4,6 +4,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const app = express();
 const config = require('./webpack.config.js');
+
 const compiler = webpack(config);
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
@@ -11,10 +12,9 @@ const compiler = webpack(config);
 app.use(
   webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
-  })
+  }),
 );
 
 // Serve the files on port 8080.
-app.listen(8083, function () {
-  console.log('Example app listening on port 8083!\n');
+app.listen(8083, () => {
 });
