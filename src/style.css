@@ -34,22 +34,66 @@
 .header h1 {
   font-size: 28px;
 }
+.bi-arrow-return-left{
+  position: relative;
+  right: 20px;
+}
 
+input::placeholder {
+  color: rgb(198, 198, 198);
+  transition: color 0.4s ease-in;
+  padding-right: 150%;
+}
+
+.Error::placeholder {
+  color: rgb(255, 113, 113);
+}
+
+.active {
+  visibility: hidden;
+  position: absolute;
+}
 .input-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid silver;
-  height: 12vh;
+  height: 10vh;
+}
+
+.flex-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-container{
+  display: flex;
+  gap: 5px;
+}
+
+.inputEdit{
+  width: 100%;
+  height: 48px;
+  font-size: 22px;
+  padding: 0rem 1rem;
+  border: none;
+}
+
+
+.inputEdit:focus{
+  border: none;
 }
 
 .input-container input {
   height: 60px;
-  width: 90%;
+  width: 100%;
   border: none;
   font-size: 18px;
   font-style: italic;
-  padding-left: 1rem;
+  padding: 0 3rem 0rem 1rem;
 }
 
 .input-container button {
