@@ -1,40 +1,72 @@
-const itemsContainer = document.querySelector('.items');
+import items from './arry.js';
 
-const items = [
-  {
-    description: 'Wash the dishes',
-    completed: true,
-    index: 0,
-  },
-  {
-    description: 'Complete to Do list project',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Go to the gym',
-    completed: true,
-    index: 2,
-  },
-
-];
+const itemContainer = document.querySelector('.items-section');
+const editInput = document.getElementsByClassName('bi-pencil-square');
+const editTaskEl = document.getElementsByClassName('editsectionInput');
+const toDoTask = document.getElementsByClassName('editText');
 
 const renderItems = () => {
   let content = '';
 
-  items.forEach((element) => {
+  items.forEach((element, index) => {
     content += `
-        <li>
-                    <input type="checkbox" ${element.completed && 'checked'} name="" id="" />
-                    <p>${element.description}</p>
-                    <span>
-                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                          </svg></span>
-                    </span>
-                </li> `;
+    <li class="to-do__item " id=${index}>
+    <div class="editsectionInput active flex-row ">
+    <input type="text" class="inputEdit to-do__input"> 
+    <i class="bi bi-arrow-return-left addfunt" id=${index}></i>
+    </div>
+    <div class="flex-row editText">
+    <input type="checkbox" ${element.completed && 'checked'}/>
+    <p>${element.description}</p>
+    <span class="icon-container">
+    <i class="bi bi-three-dots-vertical" id=${index}></i>
+    <i class="bi bi-trash " id=${index}></i>
+    <i class="bi bi-pencil-square" id=${index}></i>
+    </span>
+    </div>
+  </li>`;
   });
-  itemsContainer.innerHTML = content;
+
+  const removeFunction = () => {
+    const removeBtn = [...document.getElementsByClassName('bi-trash')];
+    removeBtn.forEach((item) => {
+      item.addEventListener('click', (elem) => {
+        items.splice(elem.target.id, 1);
+        localStorage.setItem('items', JSON.stringify(items));
+        renderItems();
+      });
+    });
+  };
+
+  const editFunction = () => {
+    const editTaskBtns = [...editInput];
+    editTaskBtns.forEach((item) => {
+      item.addEventListener('click', () => {
+        const edititemList = [...editTaskEl];
+        const ItemToBeEdit = edititemList[item.id];
+        const itemIntheInputBtn = ItemToBeEdit.childNodes[1];
+        ItemToBeEdit.classList.remove('active');
+        toDoTask[item.id].classList.add('active');
+        itemIntheInputBtn.value = items[item.id].description;
+        ItemToBeEdit.childNodes[2].addEventListener('click', () => {
+          const newItemModify = ItemToBeEdit.childNodes[1].value;
+          if (newItemModify) {
+            items[item.id].description = newItemModify;
+            localStorage.setItem('items', JSON.stringify(items));
+            renderItems();
+          } else {
+            itemIntheInputBtn.classList.add('Error');
+            setTimeout(() => {
+              itemIntheInputBtn.classList.remove('Error');
+            }, 2000);
+          }
+        });
+      });
+    });
+  };
+  itemContainer.innerHTML = content;
+  removeFunction();
+  editFunction();
 };
 
 export default renderItems;
