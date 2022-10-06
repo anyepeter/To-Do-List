@@ -3,7 +3,6 @@ import renderToDoItems from './addItems.js';
 
 const addBtn = document.querySelector('.addfunt');
 const inputItems = document.querySelector('.to-do__input');
-const input = document.querySelector('input');
 
 // addfunction
 const addFunction = () => {
@@ -18,11 +17,6 @@ const addFunction = () => {
       localStorage.setItem('items', JSON.stringify(items));
       renderToDoItems();
       inputItems.value = '';
-    } else {
-      input.classList.add('Error');
-      setTimeout(() => {
-        input.classList.remove('Error');
-      }, 3000);
     }
   });
 };

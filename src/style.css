@@ -51,8 +51,7 @@ input::placeholder {
 }
 
 .active {
-  visibility: hidden;
-  position: absolute;
+  display: none !important;
 }
 
 .input-container {
