@@ -4,7 +4,9 @@
   margin: 0;
   font-family: 'Balsamiq Sans', cursive;
 }
-
+.checktrue{
+  text-decoration: line-through;
+}
 .main-container {
   width: 100%;
   height: 100vh;
@@ -123,7 +125,7 @@ li p {
   width: 100%;
 }
 
-.footer {
+#footer {
   width: 100%;
   padding: 10px;
   text-align: center;
