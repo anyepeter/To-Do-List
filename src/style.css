@@ -4,9 +4,11 @@
   margin: 0;
   font-family: 'Balsamiq Sans', cursive;
 }
-.checktrue{
+
+.checktrue {
   text-decoration: line-through;
 }
+
 .main-container {
   width: 100%;
   height: 100vh;

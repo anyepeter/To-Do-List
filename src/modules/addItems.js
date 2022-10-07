@@ -50,30 +50,27 @@ const renderItems = () => {
     });
   };
 
-  
-const checkItems = () => {
+  const checkItems = () => {
+    const check = [...document.getElementsByClassName('check')];
 
-  const check = [...document.getElementsByClassName('check')]
-
-  check.forEach((eleme) => {
+    check.forEach((eleme) => {
       eleme.addEventListener('click', () => {
-        const man = eleme.parentElement.parentElement.id
+        const man = eleme.parentElement.parentElement.id;
         const { completed } = items[man];
-        
-        if (completed){
-          items[man].completed = false
-        } else {
-          items[man].completed = true  
-        }
-        localStorage.setItem('items', JSON.stringify(items))
-      })
-  })
 
-}
+        if (completed) {
+          items[man].completed = false;
+        } else {
+          items[man].completed = true;
+        }
+        localStorage.setItem('items', JSON.stringify(items));
+      });
+    });
+  };
   itemContainer.innerHTML = content;
   removeFunction();
   editFunction();
-  checkItems()
+  checkItems();
 };
 
 export default renderItems;
