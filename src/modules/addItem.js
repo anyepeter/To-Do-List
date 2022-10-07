@@ -1,5 +1,5 @@
 import items from './arry.js';
-import renderToDoItems from './addItems.js';
+import renderItems from './addItems.js';
 
 const addBtn = document.querySelector('.addfunt');
 const inputItems = document.querySelector('.to-do__input');
@@ -15,7 +15,7 @@ const addFunction = () => {
       };
       items.push(item);
       localStorage.setItem('items', JSON.stringify(items));
-      renderToDoItems();
+      renderItems();
       inputItems.value = '';
     }
   });
