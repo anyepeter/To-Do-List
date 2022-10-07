@@ -15,7 +15,7 @@ const renderItems = () => {
     <i class="bi bi-arrow-return-left addfunt" id=${index}></i>
     </div>
     <div class="flex-row editText">
-    <input type="checkbox" ${element.completed && 'checked'}/>
+    <input class="check" type="checkbox" ${element.completed && 'checked'}/>
     <p>${element.description}</p>
     <span class="icon-container">
     <i class="bi bi-three-dots-vertical" id=${index}></i>
@@ -49,9 +49,31 @@ const renderItems = () => {
       });
     });
   };
+
+  
+const checkItems = () => {
+
+  const check = [...document.getElementsByClassName('check')]
+
+  check.forEach((eleme) => {
+      eleme.addEventListener('click', () => {
+        const man = eleme.parentElement.parentElement.id
+        const { completed } = items[man];
+        
+        if (completed){
+          items[man].completed = false
+        } else {
+          items[man].completed = true  
+        }
+        localStorage.setItem('items', JSON.stringify(items))
+      })
+  })
+
+}
   itemContainer.innerHTML = content;
   removeFunction();
   editFunction();
+  checkItems()
 };
 
 export default renderItems;
