@@ -1,7 +1,7 @@
 
 # Todo List project
 
-> In this project, an individual can set a list of things to do achive by the end of a day.
+>In this project, an individual can set a list of things to do and achieve them by the end of the day.
 
 
 ## The project is built using
